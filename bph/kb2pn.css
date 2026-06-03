@@ -325,3 +325,77 @@ display: none;
     background-positon-x: 0px;
   }
 }
+/* ==========================
+   PEMBINA
+========================== */
+
+.pembina{
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:40px;
+}
+
+.oval-pembina{
+    width:280px;
+    height:280px;
+
+    margin:auto;
+
+    border:3px solid #00bfff;
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#f5f5f5;
+
+    box-shadow: 0 8px 20px rgba(0,191,255,.2);
+}
+
+.oval-pembina img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+}
+
+.nama-pembina{
+    margin-top:15px;
+    font-size:24px;
+    font-weight:bold;
+    color:#222;
+}
+
+.jabatan-pembina{
+    display:inline-block;
+
+    margin-top:10px;
+
+    background:#00bfff;
+    color:white;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    font-size:16px;
+    font-weight:bold;
+}
+@media screen and (max-width:767px){
+
+    .oval-pembina{
+        height:350px;
+        border-radius:45%;
+    }
+
+    .nama-pembina{
+        font-size:26px;
+    }
+
+    .jabatan-pembina{
+        font-size:18px;
+        padding:12px 25px;
+    }
+}
