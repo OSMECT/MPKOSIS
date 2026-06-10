@@ -28,8 +28,8 @@ box-sizing: border-box;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('font/Poppins-Regular.ttf') format('truetype'),
-       url('fonts/Poppins-Regular.woff') format('woff');
+  src: url('font/poppins-regular-webfont.ttf') format('truetype'),
+       url('fonts/poppins-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
