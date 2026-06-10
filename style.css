@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-decoration: none;
   list-style: none;
 }
@@ -27,9 +27,9 @@ box-sizing: border-box;
   z-index: 1;
 }
 @font-face {
-  font-family: 'CustomFont';
-  src: url('font/angrybirds-regular.ttf') format('truetype'),
-       url('fonts/CustomFont.woff') format('woff');
+  font-family: 'Poppins';
+  src: url('font/Poppins-Regular.ttf') format('truetype'),
+       url('fonts/Poppins-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -44,7 +44,7 @@ nav {
   font-size: 35px;
   font-weight: bold;
   color: #ffffff;
-  font-family: 'CustomFont', sans-serif; 
+  font-family: 'Poppins', sans-serif; 
 }
 
 .container {
@@ -73,7 +73,7 @@ nav {
 height: 100px;
 width: 100%;
 text-align: center;
-font-family: 'CustomFont', sans-serif; /* sans-serif sebagai fallback font */
+font-family: 'Poppins', sans-serif; /* sans-serif sebagai fallback font */
 }
 
 .bph, .bph1 {
@@ -86,7 +86,7 @@ margin-top: 20px;
 border-radius: 5px;
 text-align: center;
 background-color: #fff; /* Background color for the sections */
-border: 2px solid  #00bfff; /* Border color to match Angry Birds theme */
+border: 4px solid  #00bfff; /* Border color to match Angry Birds theme */
 }
 
 .hover-text {
@@ -120,7 +120,7 @@ display: block;
 
 @media screen and (min-width: 768px) {
   body {
-      display: none;
+      display: block;
   }
 }
 
@@ -145,7 +145,7 @@ display: block;
 margin: 0 auto;
 position: relative;
 z-index: 1;
-border: 2px solid  #00bfff;
+border: 5px solid  #00bfff;
 border-radius: 50%;
 }
 
@@ -170,7 +170,7 @@ height: auto;
 display: block;
 margin: 0 auto;
 position: relative;
-border: 2px solid  #00bfff;
+border: 5px solid  #00bfff;
 border-radius: 50%;
 }
 
