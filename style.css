@@ -77,45 +77,81 @@ font-family: 'Poppins', sans-serif; /* sans-serif sebagai fallback font */
 }
 
 .bph, .bph1 {
-position: relative;
-display: block;
-margin: auto;
-width: fit-content;
-padding: 10px 20px;
-margin-top: 20px;
-border-radius: 5px;
-text-align: center;
-background-color: #fff; /* Background color for the sections */
-border: 4px solid  #00bfff; /* Border color to match Angry Birds theme */
-}
-
-.hover-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Menempatkan tepat di titik tengah foto */
-  width: auto;                      /* Lebar otomatis mengikuti panjang teks */
-  height: auto;                     /* Tinggi otomatis */
-  
-  background-color: #00bfff; 
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 10px 24px;
+  position: relative !important;
+  display: block;        /* Mengubah jadi block agar overflow:hidden bekerja sempurna */
+  max-width: 90%;        /* Mengatur agar lebar kotak pas seukuran layar HP */
+  margin: 20px auto;     /* Jarak antar kotak foto biar rapi turun ke bawah */
+  overflow: hidden;      /* KUNCI: Memotong semua warna/elemen yang meluber keluar foto */
   border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  
-  opacity: 1; 
-  transition: all 0.3s ease;
-  z-index: 10;
+  border: 4px solid #00bfff; /* Border biru cyan tema web kamu */
+  background-color: transparent !important;
 }
 
-.bph:hover .hover-text,
-.bph1:hover .hover-text {
-  background-color: #0099cc; /* Warna tombol sedikit menggelap */
-  transform: translate(-50%, -50%) scale(1.1); /* Tombol membesar sedikit secara halus */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+.bph img, .bph1 img {
+  width: 100%;           /* Memaksa gambar memenuhi lebar kotak */
+  height: auto;
+  display: block;
+}
+
+/* Lapisan hitam transparan di atas foto */
+.hover-text {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent !important;
+  opacity: 0;
+  display: block !important; 
+  z-index: 99 !important;
+  box-sizing: border-box;
+}
+
+/* Label MPK / BPH / KB2PN di pojok kiri atas */
+.nama-sekbid {
+  position: absolute !important;
+  top: 15px !important;
+  left: 15px !important;
+  background-color: #00bfff !important;
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: auto !important; 
+  height: auto !important;
+  display: inline-block !important;
+  z-index: 100 !important;
+}
+
+/* Tombol KLIK warna putih di tengah-tengah foto */
+.tombol-klik {
+  position: absolute !important;
+  top: 75% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%); /* Menaruh tepat di tengah */
+  
+  background-color: #ffffff !important;
+  color: #00bfff !important;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px 28px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  width: auto !important;  
+  height: auto !important;
+  z-index: 100 !important;
+  transition: all 0.3s ease;
+}
+
+/* Efek interaktif pas foto disentuh/di-hover kursor */
+.bph:hover .tombol-klik,
+.bph1:hover .tombol-klik {
+  background-color: #00bfff !important;
+  color: #ffffff !important;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .bph::after, .bph1::after {
@@ -158,6 +194,9 @@ text-align: center;
 }
 
 .chairman img {
+width: 350px;          /* Atur lebar lingkaran (samakan ukurannya) */
+height: 350px;         /* Atur tinggi wajib sama dengan lebar agar bulat sempurna */
+object-fit: cover;
 max-width: 100%;
 height: auto;
 display: block;
