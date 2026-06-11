@@ -90,25 +90,44 @@ border: 4px solid  #00bfff; /* Border color to match Angry Birds theme */
 }
 
 .hover-text {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.6);
-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-opacity: 0;
-transition: opacity 0.3s;
-font-size: 1.5em;
-text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Menempatkan tepat di titik tengah foto */
+  width: auto;                      /* Lebar otomatis mengikuti panjang teks */
+  height: auto;                     /* Tinggi otomatis */
+  
+  background-color: #00bfff; 
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  
+  opacity: 1; 
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .bph:hover .hover-text,
 .bph1:hover .hover-text {
-opacity: 1;
+  background-color: #0099cc; /* Warna tombol sedikit menggelap */
+  transform: translate(-50%, -50%) scale(1.1); /* Tombol membesar sedikit secara halus */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.bph::after, .bph1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); /* Lapisan gelap tipis */
+  border-radius: 5px;
+  pointer-events: none; /* Mencegah lapisan mengganggu klik mouse */
 }
 
 .bph img,
@@ -372,12 +391,11 @@ animation: spin 2s linear infinite;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 120px; /* Ukuran lingkaran */
+  width: 120px;
   height: 120px;
-  background-color: rgba(255, 255, 255, 0.5); /* Warna dan transparansi lingkaran */
   border-radius: 50%;
   animation: moveCircle 5s linear infinite;
-  z-index: 1; /* Agar lingkaran berada di belakang gambar */
+  z-index: 1;
 }
 
 @keyframes moveCircle {
@@ -394,10 +412,9 @@ animation: spin 2s linear infinite;
   transform: translateY(-50%);
   width: 120px; /* Ukuran lingkaran */
   height: 120px;
-  background-color: rgba(255, 255, 255, 0.5); /* Warna dan transparansi lingkaran */
   border-radius: 50%;
   animation: move 5s linear infinite;
-  z-index: 1; /* Agar lingkaran berada di belakang gambar */
+  z-index: 1; 
 }
 
 @keyframes move{
@@ -407,4 +424,21 @@ animation: spin 2s linear infinite;
   to {
       left: 100%; /* Berakhir di luar layar sebelah kanan */
   }
+}
+
+/* Menghapus border biru dan background khusus untuk gambar ikan */
+.circle-animation img, 
+.bunder img {
+  border: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  border-radius: 0 !important; /* Menghilangkan efek bulat pada ikan */
+}
+
+/* Memastikan wadah animasinya juga bersih dari warna */
+.circle-animation, 
+.bunder {
+  background-color: transparent !important;
+  background: none !important;
+  border: none !important;
 }
